@@ -7,7 +7,7 @@ import main.service.PontoOnibusService;
 
 public class PontoOnibusFactory {
 
-	PontoOnibusService service = new PontoOnibusService();
+	PontoOnibusService service;
 	
 	
 	public PontoOnibusFactory() {

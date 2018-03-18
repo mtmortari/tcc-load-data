@@ -1,15 +1,31 @@
 package main.entity;
 
-public class Itinerario extends BaseEntity{
-	
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity(name = "itinerario")
+public class Itinerario extends BaseEntity {
+
 	private static final long serialVersionUID = 1L;
-	
+
+	@Id
+	@Column(name = "itinerario_id")
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "itinerario_generator")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	//@SequenceGenerator(name="itinerario_generator", sequenceName = "itinerario_id_seq")
 	private Long itinerarioId;
-	
+
+	@Column(name = "bus_id")
 	private Long linhaId;
-	
+
+	@Column(name = "bus_stop_id")
 	private Long paradaId;
-	
+
+	@Column(name = "sequence")
 	private Integer sequence;
 
 	public Long getItinerarioId() {
@@ -48,7 +64,5 @@ public class Itinerario extends BaseEntity{
 	public Long getId() {
 		return this.itinerarioId;
 	}
-	
-	
 
 }
